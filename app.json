@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "Flashcardsv4",
+    "slug": "flashcardsv4",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.edwardcerverizzo.flashcardsv4"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.edwardcerverizzo.flashcardsv4"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f8a97ca7-ff41-41fe-8b28-be8efb90eaea"
+      }
+    },
+    "owner": "edwardcerverizzo",
+    "updates": {
+      "url": "https://u.expo.dev/f8a97ca7-ff41-41fe-8b28-be8efb90eaea"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
+  }
+}
