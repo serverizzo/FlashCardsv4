@@ -1,0 +1,8 @@
+appId: "com.edwardcerverizzo.flashcardsv4"
+---
+- launchApp
+- assertVisible: "Welcome!"
+- tapOn: "Explore"
+- assertVisible: "Explore"
+- tapOn: "File.*"
+
