@@ -11,7 +11,7 @@ function CardSheet() {
       }}
       gestureEnabled
       safeAreaInsets={insets}
-      drawUnderStatusBar
+      // drawUnderStatusBar
       containerStyle={{
         height: '100%',
       }}>
