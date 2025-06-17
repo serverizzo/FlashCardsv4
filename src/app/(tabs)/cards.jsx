@@ -2,8 +2,8 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import React, { useState, useRef } from "react";
 import Swiper from "react-native-deck-swiper";
 import ActionSheet from "react-native-actions-sheet";
-import CardDeck from "./cardsDependencies/CardDeck";
-import "../sheets.tsx";
+import CardDeck from "../../cardsDependencies/CardDeck.jsx";
+import "../../cardsDependencies/sheets.tsx";
 import { SheetProvider } from "react-native-actions-sheet";
 
 export default function CardsHome() {

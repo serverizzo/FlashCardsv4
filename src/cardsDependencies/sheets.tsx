@@ -1,7 +1,8 @@
 import {registerSheet} from 'react-native-actions-sheet';
-import ExampleSheet from "./(tabs)/cardsDependencies/CardSheet";
+// import CardSheet from "../cardsDependencies/CardSheet";
+import CardSheet from './CardSheet';
  
-registerSheet('CardSheet', ExampleSheet);
+registerSheet('CardSheet', CardSheet);
  
 // We extend some of the types here to give us great intellisense
 // across the app for all registered sheets.
