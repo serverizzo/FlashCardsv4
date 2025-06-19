@@ -3,12 +3,12 @@ import React, { useState, useRef } from "react";
 import Swiper from "react-native-deck-swiper";
 import { SheetManager } from "react-native-actions-sheet";
 
-export default function CardDeck() {
+export default function CardDeck({cards}) {
 
   return (
     <View style={styles.container}>
       <Swiper
-        cards={["DO", "MORE", "OF", "WHAT", "MAKES", "YOU", "HAPPY"]}
+        cards={cards}
         renderCard={(card) => {
           return (
             <View style={styles.card}>

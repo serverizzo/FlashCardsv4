@@ -8,10 +8,12 @@ import { SheetProvider } from "react-native-actions-sheet";
 
 export default function CardsHome() {
 
+  const [ cards, setCards ]= useState(["DO", "MORE", "OF", "WHAT", "MAKES", "YOU", "HAPPY"])
+
   return (
     <SheetProvider>
       <View style={styles.container}>
-        <CardDeck />
+        <CardDeck cards={cards} />
       </View>
     </SheetProvider>
   );
