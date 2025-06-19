@@ -18,6 +18,12 @@ function CardSheet(props) {
         <View>
           <Text>Hello World</Text>
           <Text>{props.payload.title}</Text>
+          <Button
+            title="Change Title"
+            onPress={() => {
+              props.payload.setCards(["added", "new", "card", "to", "the", "deck"]);
+            }}
+          />
         </View>
       </ActionSheet>
     );

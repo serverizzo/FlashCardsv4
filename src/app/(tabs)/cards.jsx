@@ -13,7 +13,7 @@ export default function CardsHome() {
   return (
     <SheetProvider>
       <View style={styles.container}>
-        <CardDeck cards={cards} />
+        <CardDeck cards={cards} setCards={setCards} />
       </View>
     </SheetProvider>
   );

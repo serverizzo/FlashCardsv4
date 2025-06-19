@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import Swiper from "react-native-deck-swiper";
 import { SheetManager } from "react-native-actions-sheet";
 
-export default function CardDeck({cards}) {
+export default function CardDeck({cards, setCards}) {
 
   return (
     <View style={styles.container}>
@@ -25,6 +25,7 @@ export default function CardDeck({cards}) {
         onTapCard={() => {
             SheetManager.show('CardSheet', {
               payload: {
+                setCards: setCards,
                 title: "Card Actions",
                 description: "Choose an action for this card",
               },
