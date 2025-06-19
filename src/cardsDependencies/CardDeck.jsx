@@ -11,10 +11,10 @@ export default function CardDeck({ cards, setCards }) {
     inputRange: [0, 180],
     outputRange: ["0deg", "180deg"],
   });
-  
+
   const flipToFrontSytle = {
     transform: [{ rotateY: frontInterpolate }],
-  }
+  };
 
   const backInterpolate = flipAnimation.interpolate({
     inputRange: [0, 180],
@@ -26,7 +26,7 @@ export default function CardDeck({ cards, setCards }) {
   };
 
   const flipCard = () => {
-    if(isFlipped) {
+    if (isFlipped) {
       // animate back to the front side
       Animated.spring(flipAnimation, {
         toValue: 0,
@@ -58,6 +58,18 @@ export default function CardDeck({ cards, setCards }) {
               </Animated.View>
               <Animated.View style={[styles.card, flipToBackStyle]}>
                 <Text style={styles.text}>Back</Text>
+                <Button
+                title="Open Sheet"
+                  onPress={() => {
+                    SheetManager.show("CardSheet", {
+                      payload: {
+                        setCards: setCards,
+                        title: "Card Actions",
+                        description: "Choose an action for this card",
+                      },
+                    });
+                  }}
+                ></Button>
               </Animated.View>
             </View>
           );
