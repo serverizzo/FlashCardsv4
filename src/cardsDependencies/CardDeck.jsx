@@ -23,8 +23,12 @@ export default function CardDeck({cards}) {
           console.log("onSwipedAll");
         }}
         onTapCard={() => {
-            SheetManager.show('CardSheet');
-            // actionSheetRef.current?.show();
+            SheetManager.show('CardSheet', {
+              payload: {
+                title: "Card Actions",
+                description: "Choose an action for this card",
+              },
+            });
         }}
         cardIndex={0}
         backgroundColor={"#4FD0E9"}
