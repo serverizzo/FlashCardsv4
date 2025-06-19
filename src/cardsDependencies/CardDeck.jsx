@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Button, Animated } from "react-native";
 import React, { useState, useRef } from "react";
 import Swiper from "react-native-deck-swiper";
 import { SheetManager } from "react-native-actions-sheet";
-// import Animated, { useSharedValue } from "react-native-reanimated";
 
 export default function CardDeck({ cards, setCards }) {
   const [isFlipped, setIsFlipped] = useState(false);
