@@ -1,7 +1,8 @@
-import { Link, router } from "expo-router";
+import { Link } from "expo-router";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import React from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { useUser } from "../../context/userContext.jsx";
 import { auth } from "../../firestoreConfigurations/FirebaseConfig.jsx";
 
 // export const CustomText = ({ children }: PropsWithChildren) => (
@@ -12,11 +13,16 @@ export default function HomeScreen() {
   
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const { setUser } = useUser();
 
   const signIn = async () => {
     try{
-      const user = await signInWithEmailAndPassword(auth, email, password);
-      if (user) router.replace("/(tabs)/cards");
+      const res = await signInWithEmailAndPassword(auth, email, password);
+      const user = res.user;
+      // if (user) router.replace("/(tabs)/cards");
+      console.log("User signed in:", user);
+      console.log("User signed in:", user.uid);
+      setUser(user);
     }
     catch (error) {
       console.error("Error signing in:", error);
@@ -24,7 +30,9 @@ export default function HomeScreen() {
   }
   const signUp = async () =>  {
     try{
-      const user = await createUserWithEmailAndPassword(auth, email, password);
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      setUser(res.user);
+
     }
     catch (error) {
       console.error("Error signing in:", error);
